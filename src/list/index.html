@@ -1,14 +1,13 @@
 <html>
   <head>
     <title>Pretty JSCPD Report - List View</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
-    <script src="utils.js"></script>
-    <script src="list.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/default.min.css">
+	<link rel="stylesheet" href="./list.less">
+	<script type="module" src="./list.ts"></script>
   </head>
-  <body onload="list()">
+  <body id="body">
     <h1>List of Exact Clones in Code Base</h1>
-    <p><a href="./graph.html">Graph View</a></p>
+    <p><a href="../graph/index.html">Graph View</a></p>
     <div>
       <label for="file-input">Please select your JSCPD <strong>JSON</strong> report</label>
       <input type="file" id="file-input" name="file input" accept=".json">
