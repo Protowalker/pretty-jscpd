@@ -1,6 +1,9 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
+	base: 'pretty-jscpd',
 	root: 'src',
-	base: 'pretty-jscpd'
+	build: {
+		outDir: '../dist'
+	}
 });
