@@ -127,7 +127,7 @@ const draw = (report: Result) => {
 		}
 	};
 
-	const network = new Network(container, data, options);
+	new Network(container, data, options);
 };
 
 export const graph = () => {

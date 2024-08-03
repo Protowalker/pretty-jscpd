@@ -1,7 +1,9 @@
 const handleFileLoaded = (file: File, resultProcessor: ResultProcessor) => {
 	const reader = new FileReader();
-	reader.addEventListener("load", (event) => {
-		const { result } = event.target;
+	reader.addEventListener("load", () => {
+		const result = reader.result;
+		assert(result !== null);
+		assert(typeof result === 'string');
 		resultProcessor(JSON.parse(result));
 		if (localStorage) {
 			localStorage.setItem("pretty-jscpd", result);
@@ -15,7 +17,7 @@ const listenToFileUpload = (resultProcessor: ResultProcessor) => {
 		"file-input"
 	) as HTMLInputElement;
 
-	inputElement.addEventListener("change", (event: Event) => {
+	inputElement.addEventListener("change", () => {
 		const fileList = inputElement.files;
 		if (!fileList) return;
 		handleFileLoaded(fileList[0], resultProcessor);
@@ -76,3 +78,10 @@ export const initWithResultProcessor = (resultProcessor: ResultProcessor) => {
 	}
 	listenToFileUpload(resultProcessor);
 };
+
+
+export function assert(val: boolean): asserts val {
+	if(!val) {
+		throw new Error("Assertion failed");
+	}
+}

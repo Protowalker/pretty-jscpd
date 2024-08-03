@@ -2,7 +2,6 @@ import {
 	Duplicate,
 	initWithResultProcessor,
 	Result,
-	Statistics,
 	StatisticsDatum,
 } from "../utils";
 import hljs from "highlight.js";
